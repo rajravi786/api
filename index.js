@@ -11,8 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
-
+app.set('view engine', 'ejs')
 
 
 
@@ -132,4 +131,5 @@ app.get("/reminder/:id",async(req,res)=>{
 
 
 
-app.listen(8000);
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
