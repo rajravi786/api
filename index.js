@@ -3,6 +3,7 @@ const cors = require("cors");
 require('./db/config.js');
 const User = require("./db/User.js");
 const Reminder = require("./db/Reminder.js")
+const PORT = process.env.PORT || 8000;
 const app = express();
 
 
@@ -131,5 +132,5 @@ app.get("/reminder/:id",async(req,res)=>{
 
 
 
-const PORT = process.env.PORT || 8000;
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
